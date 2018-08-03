@@ -1,0 +1,86 @@
+<!--div ng-controller="usuarioController" ng-controller="AppCtrl" layout="column" ng-cloak class="md-inline-form">
+  <md-content>
+    <div>
+      <form name="LoginApp">
+        <md-input-container>
+          <label>Nombre de Usuario</label>
+          <input type="text" name="nombre" ng-model="usuario.nombre" required>
+        </md-input-container>
+        <md-input-container>
+          <label>Correo Electrónico</label>
+          <input type="email" name="email" ng-model="usuario.email" required>
+        </md-input-container>
+      </form>
+    </div>
+    <div ng-controller="AppCtrl" ng-cloak>
+      <md-content>
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+          <md-button md-no-ink class="md-primary" ng-click="iniciarSesion(usuario)"> Iniciar</md-button>
+        </section>
+      </md-content>
+    </div>
+  </md-content>
+</div>-->
+
+<div ng-controller="AppCtrl" layout="column" style="height:500px;" ng-cloak>
+
+  <section layout="row" flex>
+
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-md')"
+        md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content layout-padding ng-controller="LeftCtrl">
+        <md-content ng-controller="LeftCtrl" layout-padding>
+          <md-button ng-click="close()" class="md-primary">
+            Close Sidenav Right
+          </md-button>
+          <form>
+            <md-input-container>
+              <label for="nombreInput">Nombre de Usuario</label>
+              <input type="text" id="nombreInput" name="nombre" ng-model="usuario.nombre" md-autofocus>
+            </md-input-container>
+            <md-input-container>
+              <label for="emailInput">Correo Electrónico</label>
+              <input type="text" id="emailInput" name="email" ng-model="usuario.email" md-autofocus>
+            </md-input-container>
+          </form>
+
+          <md-content>
+            <div ng-controller="usuarioController">
+              <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button md-no-ink class="md-primary" ng-click="iniciarSesion(usuario)">Ingresar</md-button>
+              </section>
+            </div>
+          </md-content>
+        </md-content>
+
+    </md-sidenav>
+
+    <md-content flex layout-padding>
+      <div  layout="column" layout-align="top left">
+        <div>
+          <md-button ng-click="toggleLeft()"
+            class="md-primary" hide-gt-md>
+            Toggle left
+          </md-button>
+        </div>
+      </div> 
+
+      <div class="container">
+        <a ui-sref="prueba">Prueba</a>
+        <div ui-view></div>
+      </div>     
+      
+      <div flex></div>
+
+    </md-content>
+  </section>
+
+</div>
+

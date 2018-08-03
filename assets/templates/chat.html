@@ -1,0 +1,10 @@
+<div>
+	<h4></h4>
+	<div>
+		<table>
+			<tr ng-repeat="chat in chatList | orderBy:predicate:reverse | limitTo: 15">
+				<td class="col-md-12 td_class"><strong>{{ chat.emisor }} : </strong> {{ chat.mensaje }}</td>
+			</tr>
+		</table>
+	</div>
+</div>

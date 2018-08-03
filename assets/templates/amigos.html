@@ -1,0 +1,11 @@
+<md-list ng-controller="amigosController" ng-cloak>
+	<md-subheader class="md-no-sticky">Mis amigos
+		
+	</md-subheader>
+  	<md-list-item ng-repeat="amigo in amigos" class="noright">
+    	<p>{{ amigo.nombre }}</p>    	
+    	<a ui-sref="chat">
+			<md-icon>message</md-icon>
+		</a>
+	</md-list-item>
+</md-list>

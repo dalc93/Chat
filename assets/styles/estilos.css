@@ -1,0 +1,58 @@
+.ocultar {
+  display: hidden;
+}
+
+.mostar{
+  display: block;
+}
+
+.buttondemoBasicUsage section {
+  background: #f7f7f7;
+  border-radius: 3px;
+  text-align: center;
+  margin: 1em;
+  position: relative !important;
+  padding-bottom: 10px; }
+
+.buttondemoBasicUsage md-content {
+  margin-right: 7px; }
+
+.buttondemoBasicUsage section .md-button {
+  margin-top: 16px;
+  margin-bottom: 16px; }
+
+.buttondemoBasicUsage .label {
+  position: absolute;
+  bottom: 5px;
+  left: 7px;
+  font-size: 14px;
+  opacity: 0.54; }
+  .listdemoListControls md-divider {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.listdemoListControls md-list {
+  padding-top: 0; }
+
+.listdemoListControls md-list-item > p,
+.listdemoListControls md-list-item > .md-list-item-inner > p,
+.listdemoListControls md-list-item .md-list-item-inner > p,
+.listdemoListControls md-list-item .md-list-item-inner > .md-list-item-inner > p {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */ }
+
+  .contentdemoBasicUsage div.demo-content {
+  height: 450px; }
+
+.contentdemoBasicUsage div[ng-controller] {
+  height: 100%;
+  padding-bottom: 15px; }
+
+.contentdemoBasicUsage md-content {
+  padding: 24px; }

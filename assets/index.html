@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miChat">
+<head>
+ 	<title>Chat Pempo</title>
+
+ 	<meta charset="utf-8">
+   <!-- Viewport mobile tag for sensible mobile support -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!--Anuglar Material-->
+ 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+ 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 	<!--STYLES-->
+ 	<link rel="stylesheet" href="/styles/estilos.css">
+ 	<link rel="stylesheet" href="/styles/importer.css">
+ 	<!--STYLES END-->
+</head>
+
+ <body>
+    
+  	<div ng-controller="AppCtrl" layout="column" style="height:500px;" ng-cloak>
+
+	   <section layout="row" flex>
+
+	   	<md-sidenav
+	        class="md-sidenav-left"
+	        md-component-id="left"
+	        md-is-locked-open="$mdMedia('gt-md')"
+	        md-whiteframe="4">
+
+	      <md-toolbar class="md-theme-indigo">
+	      	<div layout="row">
+	      		<div flex>
+	      			<h1 class="md-toolbar-tools" ng-if="usuarioRta !== undefined">{{usuarioRta.nombre}}</h1>		
+	      			<h1 class="md-toolbar-tools" ng-if="usuarioRta === undefined">Bienvenido</h1>		
+	      		</div>
+	      		<div flex ng-controller="LeftCtrl" layout-paddin>
+	      			<md-button ng-click="close()" class="md-primary">
+			            X
+			         </md-button>
+	      		</div>
+	      	</div>
+	        
+	      </md-toolbar>
+	      <md-content layout-padding ng-controller="LeftCtrl">
+	         <div layout-align="center none" ng-controller="usuarioController" > 
+		         <div ng-hide="ocultarinicio">
+		            <md-input-container>
+		            	<label for="nombreInput">Nombre de Usuario</label>
+		              	<input type="text" id="nombreInput" name="nombre" ng-model="usuario.nombre" md-autofocus>
+		            </md-input-container>
+		            <md-input-container>
+		              	<label for="emailInput">Correo Electrónico</label>
+		              	<input type="text" id="emailInput" name="email" ng-model="usuario.email" md-autofocus>
+		            </md-input-container>
+		         </div >
+
+		         <div ng-hide="ocultarinicio">
+			         <md-content>
+		               <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+		                	<md-button md-no-ink class="md-primary" ng-click="iniciarSesion(usuario)">Ingresar</md-button>
+		               </section>
+			         </md-content>
+		         </div>
+
+		         <div ng-show="ocultarinicio">
+				   	<md-list ng-cloak>					   		
+				   		<md-list-item>
+						    	<a ui-sref="home"> Dashboard</a>
+						   </md-list-item>
+						   <md-list-item >
+						   	<a ui-sref="amigos"> Amigos</a>
+						   </md-list-item>
+						   <md-list-item>
+						   	<a ui-sref="messages"> Messages</a>
+						   </md-list-item>
+				   	</md-list>
+				   </div>	
+		      </div>
+	      </md-content>
+
+	    </md-sidenav>
+
+	    <md-content flex layout-padding>
+	      <div  layout="column" layout-align="top left">
+	        <div>
+	          <md-button ng-click="toggleLeft()"
+	            class="md-primary" hide-gt-md>
+	            Toggle left
+	          </md-button>
+	        </div>
+	      </div> 
+
+	      
+	      <div class="container">
+	        <div ui-view></div>
+	      </div>     
+	      
+	      <div flex></div>
+
+	    </md-content>
+	  </section>
+
+	</div>  	
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>    
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/miScript.js"></script>
+    <!--SCRIPTS END-->
+    <!--Libreria socket.io-->
+    <script type="text/javascript" src="/js/dependencies/sails.io.js"></script>
+    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    
+  </body>
+</html>
